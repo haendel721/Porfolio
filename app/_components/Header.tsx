@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Section } from "./Section";
 import { cn } from "@/lib/utils";
+import { Download } from "lucide-react";
 
 // On centralise les items pour éviter la répétition de code
 const NAV_ITEMS = [
@@ -80,14 +81,21 @@ export const Header = () => {
         </nav>
 
         {/* Ton Logo avec Micro-interaction */}
-        <div className="flex items-center">
-          <motion.img
-            src="/images/Mylogo.png"
-            alt="Logo"
-            className="w-10 h-10 cursor-pointer"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.9 }}
-          />
+        {/* Bouton CV Moderne & Cohérent */}
+        <div className="flex items-center group">
+          <a
+            href="images/cv-Haendel.pdf" // Conseil : utilisez un PDF nommé professionnellement
+            download
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 rounded-full",
+              "bg-primary/50 text-white font-medium text-sm",
+              "hover:ring-2 hover:ring-primary/20 hover:shadow-lg",
+              "transition-all duration-300 active:scale-95",
+            )}
+          >
+            <span>CV</span>
+            <Download className="w-4 h-4 group-hover:animate-bounce" />
+          </a>
         </div>
       </Section>
     </header>
