@@ -43,27 +43,7 @@ export const Status = () => {
       className="scroll-mt-30 flex max-lg:flex-col items-start gap-4"
       id="information"
     >
-      {/* COLONNE GAUCHE : PROJETS */}
-      <motion.div
-        className="flex-3 w-full"
-        initial="hidden"
-        whileInView="visible" // S'anime quand devient visible au scroll
-        viewport={{ once: true, margin: "-100px" }} // S'exécute une seule fois
-        variants={containerVariants}
-      >
-        <Card className="w-full p-4 flex flex-col gap-2">
-          <p className="text-muted-foreground text-lg">Projects</p>
-          <div className="flex flex-col gap-4">
-            {SIDE_PROJECTS.map((project, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <SideProject {...project} url="/" />
-              </motion.div>
-            ))}
-          </div>
-        </Card>
-      </motion.div>
-
-      {/* COLONNE DROITE : STAGES & FORMATIONS */}
+      {/* COLONNE DROITE : STAGES */}
       <motion.div
         className="flex-2 w-full flex flex-col gap-4"
         initial="hidden"
@@ -73,7 +53,7 @@ export const Status = () => {
       >
         {/* Section Internship */}
         <Card className="w-full p-3 flex flex-col gap-2">
-          <p className="text-muted-foreground text-lg">Internships</p>
+          <p className="text-muted-foreground text-lg">Stages</p>
           <div className="flex flex-col gap-4">
             {STAGE.map((stage, index) => (
               <motion.div key={index} variants={itemVariants}>
@@ -82,17 +62,25 @@ export const Status = () => {
             ))}
           </div>
         </Card>
-
+      </motion.div>
+      {/* COLONNE DROITE : FORMATIONS */}
+      <motion.div
+        className="flex-2 w-full flex flex-col gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
         {/* Section Training */}
         <Card className="p-3 gap-2">
-          <p className="text-muted-foreground text-lg">Training</p>
+          <p className="text-muted-foreground text-lg">Formations</p>
           <div className="flex flex-col gap-2">
             <motion.div variants={itemVariants}>
               <FormationCard
                 institue="IS2M"
                 image="images/is2m.png"
                 date="2022-2025"
-                description="Bachelor’s degree in Software Engineering"
+                description="Licence en Génie Logiciel"
               />
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -100,7 +88,7 @@ export const Status = () => {
                 institue="IESI"
                 image="images/IESI.png"
                 date="2023-2023"
-                description="Training on JavaScript and cybersecurity"
+                description="Formation JavaScript et cybersécurité"
               />
             </motion.div>
           </div>
@@ -114,12 +102,12 @@ export const SIDE_PROJECTS: SideProjectProps[] = [
   {
     id: 1,
     Logo: LandPlot,
-    title: "Fleet management",
+    title: "Gestion de flotte",
     probleme:
-      "Managing a fleet manually is time-consuming and prone to errors. Important maintenance and insurance deadlines can easily be missed.",
+      "La gestion manuelle d'une flotte automobile prend du temps et est sujette aux erreurs. Les échéances importantes d'entretien et d'assurance peuvent facilement être manquées.",
     solution:
-      "This application centralizes every aspect of fleet management in one place. It also sends automatic reminders to help companies stay organized and compliant.",
-    resultat: "reduction of management times, visibility of consumption",
+      "Cette application centralise chaque aspect de la gestion de flotte en un seul endroit. Elle envoie également des rappels automatiques pour aider les entreprises à rester organisées et conformes.",
+    resultat: "Réduction des temps de gestion, visibilité accrue sur la consommation",
     technologies: "Laravel, React, MySQL, Tailwind CSS, GitHub",
     url: "/",
   },
@@ -128,11 +116,11 @@ export const SIDE_PROJECTS: SideProjectProps[] = [
     Logo: WebhookIcon,
     title: "API",
     probleme:
-      "The application lacked proper access control for users. This increased security risks and allowed unnecessary access to resources.",
+      "L'application manquait d'un contrôle d'accès approprié pour les utilisateurs. Cela augmentait les risques de sécurité et permettait des accès non autorisés aux ressources.",
     solution:
-      "A role-based authorization system was implemented using Symfony Security. User permissions are managed to ensure secure and controlled access to the API.",
-    resultat: "Improved performance and reduced server load.",
-    technologies: "Symfony, bootstrap, MySQL, GitHub, Postman",
+      "Un système d'autorisation basé sur les rôles a été mis en œuvre avec Symfony Security. Les permissions des utilisateurs sont gérées pour garantir un accès sécurisé et contrôlé à l'API.",
+    resultat: "Amélioration des performances et réduction de la charge serveur.",
+    technologies: "Symfony, Bootstrap, MySQL, GitHub, Postman",
     url: "/",
   },
 ];
@@ -141,16 +129,16 @@ const STAGE: StageProps[] = [
   {
     image: "images/logo_dgsr.png",
     title: "DGSR",
-    role: "back-end web developer",
-    date: "August - Nov 2024",
+    role: "Développeur Web Back-End",
+    date: "Août - Nov 2024",
     url: "/",
     freelance: true,
   },
   {
     image: "images/logo_dgsr.png",
     title: "DGSR",
-    role: "full-stack web developer",
-    date: "Sept - Dec 2025",
+    role: "Développeur Web Full-Stack",
+    date: "Sept - Déc 2025",
     url: "/",
   },
 ];

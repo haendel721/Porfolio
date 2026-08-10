@@ -9,9 +9,9 @@ import { Download } from "lucide-react";
 
 // On centralise les items pour éviter la répétition de code
 const NAV_ITEMS = [
-  { id: "home", label: "Home" },
-  { id: "information", label: "Information" },
-  { id: "technology", label: "Technology" },
+  { id: "home", label: "Accueil" },
+  { id: "about", label: "À propos" },
+  { id: "technology", label: "Technologies" },
   { id: "contact", label: "Contact" },
 ];
 

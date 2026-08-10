@@ -31,7 +31,7 @@ export function ProjectGallery({
           >
             <img
               src={img}
-              alt={`${projectTitle} screenshot ${i + 1}`}
+              alt={`${projectTitle} capture ${i + 1}`}
               className="w-40 h-28 object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">

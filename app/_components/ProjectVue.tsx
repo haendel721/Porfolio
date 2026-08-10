@@ -14,7 +14,7 @@ interface ProjectCardsProps {
 export function ProjectCards({ projects }: ProjectCardsProps) {
   return (
     <Section>
-      <Badge>Projects</Badge>
+      <Badge>Projets</Badge>
       <div className="max-w-4xl mx-auto p-6">
         <motion.div
           initial={{ opacity: 0 }}

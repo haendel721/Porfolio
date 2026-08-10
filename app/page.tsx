@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Header } from "./_components/Header";
 import { Hero } from "./_components/Hero";
 import { Spacing } from "./_components/Spacing";
-import { Status } from "./_components/Status";
+import { About } from "./_components/About";
 import { Skills } from "./_components/Skills";
 import { Contact } from "./_components/Contact";
 import { Footer } from "./_components/Footer";
@@ -20,7 +20,7 @@ export default function Home() {
       <Spacing size="sm" />
       <Hero />
       <Spacing size="sm" />
-      <Status />
+      <About />
       <Spacing size="sm" />
       <ProjectCards projects={SIDE_PROJECTS} />
       <Spacing size="sm" />

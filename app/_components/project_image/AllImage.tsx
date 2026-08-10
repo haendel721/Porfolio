@@ -6,7 +6,7 @@ export interface ImagesProjectProps {
 
 export const IMAGES_PROJECTS: ImagesProjectProps[] = [
   {
-    title: "Fleet management",
+    title: "Gestion de flotte",
     image: "/images/parc-auto/flot1.png",
     images: [
       "/images/parc-auto/flot1.png",

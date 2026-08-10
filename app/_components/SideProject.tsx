@@ -26,7 +26,7 @@ export const SideProject = (props: SideProjectProps) => {
           {props.title}
         </p>
         <p className="text-primary">
-          Problem :
+          Problème :
           <span className="text-muted-foreground text-sm">
             {props.probleme}
           </span>
@@ -38,7 +38,7 @@ export const SideProject = (props: SideProjectProps) => {
           </span>
         </p>
         <p className="text-primary">
-          Result :
+          Résultat :
           <span className="text-muted-foreground text-sm">
             {props.resultat}
           </span>

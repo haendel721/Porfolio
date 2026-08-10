@@ -25,7 +25,7 @@ export const Contact = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        I will be happy to work with you
+        Je serais ravi de travailler avec vous
       </motion.h2>
 
       <div className="flex max-md:flex-col w-full gap-4">

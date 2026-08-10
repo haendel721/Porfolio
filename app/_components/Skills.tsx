@@ -61,9 +61,9 @@ export const Skills = () => {
       className="scroll-mt-15 flex flex-col items-start gap-6"
       id="technology"
     >
-      <Badge>Skills</Badge>
+      <Badge>Compétences</Badge>
       <h2 className="pb-2 text-3xl font-semibold tracking-tight">
-        I love working with these technologies
+        J&apos;aime travailler avec ces technologies
       </h2>
 
       <motion.div

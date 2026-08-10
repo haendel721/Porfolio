@@ -19,8 +19,8 @@ const AnekTelugu = Anek_Telugu({
   variable: "--font-caption"
 })
 export const metadata: Metadata = {
-  title: "Haendel Abraham . Genie logiciel",
-  description: "Portfolio avec next.js et tailindcss et typeScript",
+  title: "Haendel Abraham • Génie Logiciel",
+  description: "Portfolio développé avec Next.js, Tailwind CSS et TypeScript",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="fr" className="h-full">
       <body
         className={cn(GeistSans.variable, AnekTelugu.variable, GeistMono.variable, "font-sans h-full bg-background text-foreground")}
       >

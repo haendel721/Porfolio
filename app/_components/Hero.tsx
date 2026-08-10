@@ -50,14 +50,14 @@ export const Hero = () => {
           variants={itemVariants}
           className="font-caption text-2xl text-muted-foreground"
         >
-          Full-Stack Developer
+          Développeur Web Full-Stack
         </motion.h3>
 
         <motion.p variants={itemVariants} className="max-w-xl">
-          I am a web developer passionate about building modern applications,
-          with a solid foundation in <Code>front-end</Code> and
-          <Code>back-end</Code> technologies. Motivated and curious, I am always
-          eager to improve my skills and take on new challenges.
+          Je suis un développeur web passionné par la création d&apos;applications modernes,
+          avec de solides bases dans les technologies <Code>front-end</Code> et
+          <Code>back-end</Code>. De nature discrète et attentive, je cherche avant tout à apprendre, progresser et développer mes compétences au fil des expériences.
+
         </motion.p>
 
         <motion.ul
