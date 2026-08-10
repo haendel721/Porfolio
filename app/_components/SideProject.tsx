@@ -2,6 +2,7 @@ import { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
 type SideProjectProps = {
+  id: number;
   Logo: LucideIcon;
   title: string;
   probleme: string;

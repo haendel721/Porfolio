@@ -93,7 +93,7 @@ export const Hero = () => {
         transition={{ duration: 0.8, delay: 0.4, ease: "backOut" }}
       >
         <img
-          src="/images/me.png"
+          src="/images/profil.png"
           className="w-full h-auto max-w-xs rounded-full mx-6 shadow-2xl border-2 border-primary/20"
           alt="Abraham Haendel"
         />

@@ -17,7 +17,7 @@ import { BootstrapLogo } from "./icons/BootstrapLogo";
 import { TailwindLogo } from "./icons/TailwindLogo";
 import { JavaLogo } from "./icons/JavaLogo";
 
-const SKILLS_DATA = [
+export const SKILLS_DATA = [
   { name: "React", Logo: ReactLogo },
   { name: "Laravel", Logo: LaravelLogo },
   { name: "Next.js", Logo: NextLogo },

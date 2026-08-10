@@ -110,22 +110,27 @@ export const Status = () => {
   );
 };
 
-const SIDE_PROJECTS: SideProjectProps[] = [
+export const SIDE_PROJECTS: SideProjectProps[] = [
   {
+    id: 1,
     Logo: LandPlot,
     title: "Fleet management",
-    probleme: "Manual tracking lacks visibility.",
-    solution: "web application",
+    probleme:
+      "Managing a fleet manually is time-consuming and prone to errors. Important maintenance and insurance deadlines can easily be missed.",
+    solution:
+      "This application centralizes every aspect of fleet management in one place. It also sends automatic reminders to help companies stay organized and compliant.",
     resultat: "reduction of management times, visibility of consumption",
     technologies: "Laravel, React, MySQL, Tailwind CSS, GitHub",
     url: "/",
   },
   {
+    id: 2,
     Logo: WebhookIcon,
     title: "API",
     probleme:
-      "Lack of control over site access, unnecessary consumption of network resources, and security risks.",
-    solution: "develop a user-based authorization system and role management",
+      "The application lacked proper access control for users. This increased security risks and allowed unnecessary access to resources.",
+    solution:
+      "A role-based authorization system was implemented using Symfony Security. User permissions are managed to ensure secure and controlled access to the API.",
     resultat: "Improved performance and reduced server load.",
     technologies: "Symfony, bootstrap, MySQL, GitHub, Postman",
     url: "/",
