@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "./Section";
 import { ContactCard } from "./ContactCard";
+import { User } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -15,7 +16,8 @@ export const Contact = () => {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <Badge>Contact</Badge>
+
+        <Badge variant="outline" className="gap-1.5 py-1 px-3 border-primary/30 bg-primary/10 text-primary"><User className="w-3.5 h-3.5" />Contact</Badge>
       </motion.div>
 
       <motion.h2
@@ -41,7 +43,7 @@ export const Contact = () => {
           <ContactCard
             url="mailto:rainimamorisoaa@gmail.com"
             name="rainimamorisoaa@gmail.com"
-            image="/images/me.png"
+            image="/images/profil.png"
             mediumImage="https://static.vecteezy.com/system/resources/previews/022/613/021/original/google-mail-gmail-icon-logo-symbol-free-png.png"
           />
         </motion.div>
@@ -58,7 +60,7 @@ export const Contact = () => {
           <ContactCard
             url="https://wa.me/261338533929"
             name="+261 33 85 339 29"
-            image="/images/me.png"
+            image="/images/profil.png"
             mediumImage="https://static.vecteezy.com/system/resources/previews/045/602/356/large_2x/whatsapp-icon-logo-transparent-background-free-png.png"
           />
         </motion.div>

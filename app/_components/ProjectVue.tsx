@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "./Section";
 import { ProjectCard, SideProjectProps } from "./ProjectCard";
+import { FolderKanban } from "lucide-react";
 
 export type { SideProjectProps };
 
@@ -14,7 +15,10 @@ interface ProjectCardsProps {
 export function ProjectCards({ projects }: ProjectCardsProps) {
   return (
     <Section>
-      <Badge>Projets</Badge>
+      <Badge variant="outline" className="gap-1.5 py-1 px-3 border-primary/30 bg-primary/10 text-primary">
+        <FolderKanban className="w-3.5 h-3.5" />
+        Projets
+      </Badge>
       <div className="max-w-4xl mx-auto p-6">
         <motion.div
           initial={{ opacity: 0 }}

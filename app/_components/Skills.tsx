@@ -16,6 +16,7 @@ import { OracleLogo } from "./icons/OracleLogo";
 import { BootstrapLogo } from "./icons/BootstrapLogo";
 import { TailwindLogo } from "./icons/TailwindLogo";
 import { JavaLogo } from "./icons/JavaLogo";
+import { Puzzle } from 'lucide-react';
 
 export const SKILLS_DATA = [
   { name: "React", Logo: ReactLogo },
@@ -61,7 +62,7 @@ export const Skills = () => {
       className="scroll-mt-15 flex flex-col items-start gap-6"
       id="technology"
     >
-      <Badge>Compétences</Badge>
+      <Badge variant="outline" className="gap-1.5 py-1 px-3 border-primary/30 bg-primary/10 text-primary"><Puzzle />Compétences</Badge>
       <h2 className="pb-2 text-3xl font-semibold tracking-tight">
         J&apos;aime travailler avec ces technologies
       </h2>
