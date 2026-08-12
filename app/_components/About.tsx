@@ -105,7 +105,7 @@ const cardVariants = {
 
 export const About = () => {
   return (
-    <Section className="scroll-mt-28 flex flex-col gap-10" id="about">
+    <Section className="scroll-mt-20 flex flex-col gap-10" id="about">
       {/* Header de la section */}
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-2">

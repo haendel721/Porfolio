@@ -6,16 +6,16 @@ import { Hero } from "./_components/Hero";
 import { Spacing } from "./_components/Spacing";
 import { About } from "./_components/About";
 import { Skills } from "./_components/Skills";
-import { Contact } from "./_components/Contact";
 import { Footer } from "./_components/Footer";
 import { MessageCircleDashed, MessageCircle, Mail } from "lucide-react";
 import { ProjectCards } from "./_components/ProjectVue";
 import { SIDE_PROJECTS } from "./_components/Status";
+import { ContactMe } from "./_components/ContactMe";
 export default function Home() {
   const [open, setOpen] = useState(false);
 
   return (
-    <main>
+    <main >
       <Header />
       <Spacing size="sm" />
       <Hero />
@@ -26,7 +26,7 @@ export default function Home() {
       <Spacing size="sm" />
       <Skills />
       <Spacing size="sm" />
-      <Contact />
+      <ContactMe />
       <Spacing size="sm" />
       <Footer />
       {/* {open && (

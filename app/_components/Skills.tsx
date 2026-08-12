@@ -59,12 +59,12 @@ const itemVariants = {
 export const Skills = () => {
   return (
     <Section
-      className="scroll-mt-15 flex flex-col items-start gap-6"
+      className="scroll-mt-20 flex flex-col items-start gap-6"
       id="technology"
     >
       <Badge variant="outline" className="gap-1.5 py-1 px-3 border-primary/30 bg-primary/10 text-primary"><Puzzle />Compétences</Badge>
       <h2 className="pb-2 text-3xl font-semibold tracking-tight">
-        J&apos;aime travailler avec ces technologies
+        J'aime travailler avec ces technologies
       </h2>
 
       <motion.div
