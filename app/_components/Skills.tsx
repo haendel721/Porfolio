@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, spring } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Section } from "./Section";
 import { ReactLogo } from "./icons/ReactLogo";
@@ -16,7 +16,8 @@ import { OracleLogo } from "./icons/OracleLogo";
 import { BootstrapLogo } from "./icons/BootstrapLogo";
 import { TailwindLogo } from "./icons/TailwindLogo";
 import { JavaLogo } from "./icons/JavaLogo";
-import { Puzzle } from 'lucide-react';
+import { N8nLogo } from "./icons/N8nLogo";
+import { Puzzle } from "lucide-react";
 
 export const SKILLS_DATA = [
   { name: "React", Logo: ReactLogo },
@@ -32,71 +33,105 @@ export const SKILLS_DATA = [
   { name: "Bootstrap", Logo: BootstrapLogo },
   { name: "Tailwind", Logo: TailwindLogo },
   { name: "Java", Logo: JavaLogo },
+  { name: "n8n", Logo: N8nLogo },
 ];
 
-// Animation du conteneur (gère le décalage entre les enfants)
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Apparition l'un après l'autre
+      staggerChildren: 0.08,
+      delayChildren: 0.15,
     },
   },
 };
 
-// Animation de chaque icône
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  hidden: { opacity: 0, y: 20, scale: 0.9 },
   visible: {
     opacity: 1,
-    scale: 1,
     y: 0,
-    transition: { type: spring, stiffness: 260, damping: 20 },
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 20,
+    },
   },
-};
+} satisfies Variants;
 
 export const Skills = () => {
   return (
     <Section
-      className="scroll-mt-20 flex flex-col items-start gap-6"
+      className="scroll-mt-20 relative overflow-hidden"
       id="technology"
     >
-      <Badge variant="outline" className="gap-1.5 py-1 px-3 border-primary/30 bg-primary/10 text-primary"><Puzzle />Compétences</Badge>
-      <h2 className="pb-2 text-3xl font-semibold tracking-tight">
-        J'aime travailler avec ces technologies
-      </h2>
-
-      <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-10 py-6 w-full"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {SKILLS_DATA.map((skill, index) => (
-          <motion.div
-            key={index}
-            variants={itemVariants}
-            className="flex flex-col gap-2 items-center group"
+      <div className="relative z-10 flex flex-col items-start gap-8 md:gap-10 max-w-7xl mx-auto ">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-start gap-4 max-w-3xl"
+        >
+          <Badge
+            variant="outline"
+            className="gap-2 py-1.5 px-4 border-primary/20 bg-primary/5 text-primary backdrop-blur-sm hover:bg-primary/10 transition-colors"
           >
-            {/* Animation de flottaison continue au survol */}
+            <Puzzle className="w-3.5 h-3.5" />
+            <span className="font-medium tracking-wider text-xs uppercase">Compétences</span>
+          </Badge>
+
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-caption">
+              <span className="text-primary">J'aime travailler avec ces technologies</span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Un éventail d'outils modernes et éprouvés que j'utilise pour concevoir
+              des expériences web performantes et élégantes.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Skills Grid */}
+        <motion.div
+          className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-3 sm:gap-4 md:gap-5"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          {SKILLS_DATA.map((skill) => (
             <motion.div
+              key={skill.name}
+              variants={itemVariants}
               whileHover={{
-                y: -10,
-                scale: 1.1,
-                // rotate: index % 2 === 0 ? 5 : -5, // Rotation légère alternée
+                y: -6,
+                transition: { type: "spring", stiffness: 300, damping: 20 }
               }}
-              className="p-3 rounded-2xl bg-accent/30 border border-transparent group-hover:border-primary/20 group-hover:bg-secondary/50 transition-colors"
+              className="group relative flex flex-col items-center gap-3 p-4 sm:p-5 rounded-2xl bg-background/50 backdrop-blur-xl border border-border/60 hover:border-primary/30 hover:bg-background/80 transition-all duration-500 shadow-sm hover:shadow-lg hover:shadow-primary/[0.07]"
             >
-              <skill.Logo size={42} />
+              {/* Subtle gradient overlay on hover */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] via-transparent to-cyan-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              />
+
+              {/* Icon Container */}
+              <div className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-white/[0.07] to-transparent border border-white/[0.08] group-hover:border-primary/20 group-hover:from-primary/10 group-hover:to-transparent transition-all duration-300 shadow-inner">
+                <skill.Logo size={40} />
+              </div>
+
+              {/* Skill Name */}
+              <span className="relative z-10 text-sm font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-center">
+                {skill.name}
+              </span>
             </motion.div>
-            <h3 className="text-muted-foreground text-sm font-medium tracking-tight group-hover:text-primary transition-colors">
-              {skill.name}
-            </h3>
-          </motion.div>
-        ))}
-      </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </Section>
   );
 };

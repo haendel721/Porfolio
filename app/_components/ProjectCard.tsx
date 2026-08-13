@@ -48,7 +48,7 @@ export function ProjectCard({ project }: { project: SideProjectProps }) {
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="flex items-start justify-between">
-        <div className="flex items-start gap-4 flex-1">
+        <div className="flex items-start gap-4 ">
           {/* Logo */}
           <motion.div variants={logoVariants} whileHover="hover">
             {project.Logo && (
